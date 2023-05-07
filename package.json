@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@androz2091/insta.js": "^1.6.1",
+    "@androz2091/insta.js": "github:captainamiedi/insta.js",
     "@supabase/supabase-js": "^2.21.0",
     "dotenv": "^16.0.3",
     "openai": "^3.2.1",
