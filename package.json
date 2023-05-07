@@ -1,0 +1,24 @@
+{
+  "name": "openai-embedding",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@androz2091/insta.js": "^1.6.1",
+    "@supabase/supabase-js": "^2.21.0",
+    "dotenv": "^16.0.3",
+    "openai": "^3.2.1",
+    "twitter-autohook": "^1.7.2",
+    "twitter-webhooks": "^0.3.3"
+  },
+  "devDependencies": {
+    "supabase": "^1.55.1"
+  }
+}
