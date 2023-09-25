@@ -11,7 +11,7 @@ export const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 }
 
-export const supabaseClient = createClient("https://gpidqxxkwiudcyrgykll.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdwaWRxeHhrd2l1ZGN5cmd5a2xsIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODMzNDU2ODMsImV4cCI6MTk5ODkyMTY4M30.FscwJ6j8QO7gzcy3nXjhnUT47LFAfEpMFzH-_hOdZqw");
+export const supabaseClient = createClient(process.env.supabase_PROJECT, process.env.supabase_key);
 
 
 serve(async (req) => {
@@ -26,7 +26,7 @@ serve(async (req) => {
     // OpenAI recommends replacing newlines with spaces for best results
     const input = query.replace(/\n/g, ' ')
 
-    const configuration = new Configuration({ apiKey: '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' })
+    const configuration = new Configuration({ apiKey: process.env.openAI_KEY })
     const openai = new OpenAIApi(configuration)
 
     // Generate a one-time embedding for the query itself

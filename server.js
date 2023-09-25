@@ -52,7 +52,7 @@ async function generateEmbeddings() {
     }
   }
 
-//   generateEmbeddings()
+  generateEmbeddings()
 
 async function askQuestion(question) {
     const { data, error } = await supabaseClient.functions.invoke('ask-custom-data', {
@@ -63,54 +63,22 @@ async function askQuestion(question) {
       return data.text
 }
 
-// askQuestion();
-// (async (ƛ) => {
-//     // const webhook = new Autohook({ ...config });
-//     const webhook = new Autohook({
-//       consumer_key: "7HndZrjLTb03Axo6C5lLU3tfX",
-//       consumer_secret: "ukDP7AnE5U3WPqJ2lUjSQf9IrjAJSa3KYDEh5E3OoW7MMy0ToN",
-//       token: "293061949-8gV2wUwOyqsAIUPLNCTrDWiW1yHzZSjOmgCctJKo",
-//       token_secret: "yzM30JZRYHMk5vkZQaMJ61B2R5q4GRraEJyKlyFlTq1G6",
-//       env: "env-beta",
-//     //   port: 1337,
-//     });
-  
-//     try {
-//       // Removes existing webhooks
-//       await webhook.removeWebhooks();
-  
-//       // Listens to incoming activity
-//       await onFollow(webhook);
-  
-//       // Starts a server and adds a new webhook
-//       await webhook.start();
-  
-//       // Subscribes to a user's activity
-//       await webhook.subscribe({
-//         oauth_token: "293061949-8gV2wUwOyqsAIUPLNCTrDWiW1yHzZSjOmgCctJKo",
-//         oauth_token_secret: "yzM30JZRYHMk5vkZQaMJ61B2R5q4GRraEJyKlyFlTq1G6",
-//       });
-//     } catch (e) {
-//       console.log(e);
+
+
+// client.on('connected', () => {
+//     console.log(`Logged in as ${client.user.username}`);
+// });
+
+// client.on('messageCreate', async (message) => {
+//     if (message.author.id === client.user.id) return
+
+//     message.markSeen();
+//     // console.log(message.content, 'content message');
+//     const embeddingResponse =await askQuestion(message.content);
+//     // console.log(embeddingResponse, 'response');
+//     message.reply(embeddingResponse);
+//     if (message.content === '!ping') {
 //     }
-//   })();
+// });
 
-const client = new Insta.Client();
-
-client.on('connected', () => {
-    console.log(`Logged in as ${client.user.username}`);
-});
-
-client.on('messageCreate', async (message) => {
-    if (message.author.id === client.user.id) return
-
-    message.markSeen();
-    // console.log(message.content, 'content message');
-    const embeddingResponse =await askQuestion(message.content);
-    // console.log(embeddingResponse, 'response');
-    message.reply(embeddingResponse);
-    if (message.content === '!ping') {
-    }
-});
-
-client.login(process.env.INSTAGRAM_USERNAME, process.env.INSTAGRAM_PASSWORD);
+// client.login(process.env.INSTAGRAM_USERNAME, process.env.INSTAGRAM_PASSWORD);
